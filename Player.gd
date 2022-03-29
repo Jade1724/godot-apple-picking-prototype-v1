@@ -21,7 +21,7 @@ func _physics_process(_delta):
 	# Normalize the speed when moving diagonal direction
 	if direction != Vector3.ZERO:
 		direction = direction.normalized()
-		$Pivot.look_at(translation + direction, Vector3.UP)
+		$CharacterPivot.look_at(translation + direction, Vector3.UP)
 		
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed
