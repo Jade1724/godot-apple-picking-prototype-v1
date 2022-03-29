@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.184314, 1, 0.239216, 1 )
+
+[sub_resource type="SphereMesh" id=2]
+material = SubResource( 1 )
+
+[sub_resource type="SphereShape" id=3]
+radius = 0.25
+
+[node name="Apple" type="StaticBody"]
+
+[node name="ApplePivot" type="Spatial" parent="."]
+
+[node name="Apple" type="MeshInstance" parent="ApplePivot"]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 3 )
