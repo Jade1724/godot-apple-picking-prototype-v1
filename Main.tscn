@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://AppleTree.tscn" type="PackedScene" id=2]
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.376471, 0.847059, 0.462745, 1 )
@@ -28,6 +29,7 @@ shape = SubResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+collision_mask = 2
 
 [node name="CameraPivot" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.712247, 0.701929, 0, -0.701929, 0.712247, 0, 0, 0 )
@@ -36,3 +38,7 @@ transform = Transform( 1, 0, 0, 0, 0.712247, 0.701929, 0, -0.701929, 0.712247, 0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16.6408 )
 projection = 1
 size = 19.0
+
+[node name="AppleTree" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.783401, 0, -0.621517, 0, 1, 0, 0.621517, 0, 0.783401, 8.394, 1, 0.273 )
+collision_layer = 2

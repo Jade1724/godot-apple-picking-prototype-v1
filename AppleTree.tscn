@@ -62,6 +62,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.434655, 0.0413985, -0.00651
 curve = SubResource( 4 )
 
 [node name="SpawnLocation" type="PathFollow" parent="AppleTreePivot/SpawnPath"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.95913, 0.288974, 0.00926063 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )

@@ -2,10 +2,12 @@ extends KinematicBody
 
 # How fast the player moves in meters per second.
 export var speed = 10
+# The downward acceleration when in the air, in meters per second squared.
+export var fall_acceleration = 75
 
 var velocity = Vector3.ZERO
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	# Input direction
 	var direction = Vector3.ZERO
 	
@@ -23,6 +25,7 @@ func _physics_process(_delta):
 		direction = direction.normalized()
 		$CharacterPivot.look_at(translation + direction, Vector3.UP)
 		
-		velocity.x = direction.x * speed
-		velocity.z = direction.z * speed
-		velocity = move_and_slide(velocity, Vector3.UP)
+	velocity.x = direction.x * speed
+	velocity.z = direction.z * speed
+	velocity.y -= fall_acceleration * delta
+	velocity = move_and_slide(velocity, Vector3.UP)
