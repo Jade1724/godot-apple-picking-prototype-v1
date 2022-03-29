@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="CylinderMesh" id=1]
+top_radius = 0.2
+bottom_radius = 1.2
+height = 10.0
+
+[sub_resource type="CylinderMesh" id=2]
+top_radius = 0.2
+bottom_radius = 0.5
+height = 6.0
+
+[sub_resource type="CylinderMesh" id=3]
+top_radius = 0.1
+bottom_radius = 0.3
+height = 4.0
+
+[node name="AppleTree" type="StaticBody"]
+
+[node name="AppleTreePivot" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Trunk" type="MeshInstance" parent="AppleTreePivot"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Branch1" type="MeshInstance" parent="AppleTreePivot/Trunk"]
+transform = Transform( 0.173648, -0.984808, 0, 0.984808, 0.173648, 0, 0, 0, 1, -3.45072, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Branch2" type="MeshInstance" parent="AppleTreePivot/Trunk"]
+transform = Transform( 0.173648, 0.984808, 0, -0.984808, 0.173648, 0, 0, 0, 1, 3.451, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Branch3" type="MeshInstance" parent="AppleTreePivot/Trunk"]
+transform = Transform( 0.173648, 0.984808, 0, -0.984808, 0.173648, 0, 0, 0, 1, 2.30148, 2.85318, 0 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Branch4" type="MeshInstance" parent="AppleTreePivot/Trunk"]
+transform = Transform( 0.173648, -0.984808, 0, 0.984808, 0.173648, 0, 0, 0, 1, -2.0831, 2.73667, 0 )
+mesh = SubResource( 3 )
+material/0 = null
