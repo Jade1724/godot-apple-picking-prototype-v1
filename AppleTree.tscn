@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [sub_resource type="CylinderMesh" id=1]
 top_radius = 0.2
@@ -15,10 +15,20 @@ top_radius = 0.1
 bottom_radius = 0.3
 height = 4.0
 
+[sub_resource type="Curve3D" id=4]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -5.95913, 0.288974, 0.00926063, 0, 0, 0, 0, 0, 0, 0.404986, -0.940496, 0.0473461, 0, 0, 0, 0, 0, 0, 6.87043, 0.315393, 0.0178996, 0, 0, 0, 0, 0, 0, -0.23542, -0.61432, 0.0273448, 0, 0, 0, 0, 0, 0, -5.95913, 0.288974, 0.00926063 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0 )
+}
+
+[sub_resource type="CylinderShape" id=5]
+radius = 1.1
+height = 4.0
+
 [node name="AppleTree" type="StaticBody"]
 
 [node name="AppleTreePivot" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -46,3 +56,13 @@ material/0 = null
 transform = Transform( 0.173648, -0.984808, 0, 0.984808, 0.173648, 0, 0, 0, 1, -2.0831, 2.73667, 0 )
 mesh = SubResource( 3 )
 material/0 = null
+
+[node name="SpawnPath" type="Path" parent="AppleTreePivot"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.434655, 0.0413985, -0.00651789 )
+curve = SubResource( 4 )
+
+[node name="SpawnLocation" type="PathFollow" parent="AppleTreePivot/SpawnPath"]
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+shape = SubResource( 5 )
