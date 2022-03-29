@@ -9,6 +9,9 @@ extents = Vector3( 30, 1, 30 )
 [node name="Main" type="Node"]
 
 [node name="Ground" type="StaticBody" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="MeshInstance" type="MeshInstance" parent="Ground"]
 mesh = SubResource( 1 )
