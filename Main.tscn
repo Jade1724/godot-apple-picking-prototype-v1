@@ -4,7 +4,7 @@
 [ext_resource path="res://AppleTree.tscn" type="PackedScene" id=2]
 
 [sub_resource type="SpatialMaterial" id=3]
-albedo_color = Color( 0.376471, 0.847059, 0.462745, 1 )
+albedo_color = Color( 0.956863, 0.956863, 0.956863, 1 )
 
 [sub_resource type="CubeMesh" id=1]
 material = SubResource( 3 )
@@ -40,5 +40,5 @@ projection = 1
 size = 19.0
 
 [node name="AppleTree" parent="." instance=ExtResource( 2 )]
-transform = Transform( 0.783401, 0, -0.621517, 0, 1, 0, 0.621517, 0, 0.783401, 8.394, 1, 0.273 )
+transform = Transform( 0.783401, 0, -0.621517, 0, 1, 0, 0.621517, 0, 0.783401, 14.4196, 1, 0.26637 )
 collision_layer = 2
