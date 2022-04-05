@@ -11,8 +11,12 @@ config_version=4
 [application]
 
 config/name="godot-apple-picking-prototype-v1"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://World.tscn"
 config/icon="res://icon.png"
+
+[gdnative]
+
+singletons=[ "res://addons/godot-openxr/config/godot_openxr.gdnlib" ]
 
 [input]
 

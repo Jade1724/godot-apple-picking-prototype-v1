@@ -53,6 +53,7 @@ material/0 = null
 shape = SubResource( 2 )
 
 [node name="AppleDetector" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.187958, 0.179241, 0.299954 )
 
 [node name="CollisionShape" type="CollisionShape" parent="AppleDetector"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )

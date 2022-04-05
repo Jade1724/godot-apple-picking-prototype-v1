@@ -1,21 +1,22 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://AppleTree.gd" type="Script" id=1]
+[ext_resource path="res://Apple.tscn" type="PackedScene" id=2]
 
 [sub_resource type="CylinderMesh" id=1]
-top_radius = 0.2
-bottom_radius = 1.2
-height = 10.0
+top_radius = 0.02
+bottom_radius = 0.12
+height = 1.0
 
 [sub_resource type="CylinderMesh" id=2]
-top_radius = 0.2
-bottom_radius = 0.5
-height = 6.0
+top_radius = 0.02
+bottom_radius = 0.05
+height = 0.6
 
 [sub_resource type="CylinderMesh" id=3]
-top_radius = 0.1
-bottom_radius = 0.3
-height = 4.0
+top_radius = 0.01
+bottom_radius = 0.03
+height = 0.4
 
 [sub_resource type="Curve3D" id=4]
 _data = {
@@ -31,32 +32,42 @@ height = 4.0
 script = ExtResource( 1 )
 
 [node name="AppleTreePivot" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Trunk" type="MeshInstance" parent="AppleTreePivot"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.504807, 0 )
 mesh = SubResource( 1 )
 material/0 = null
 
 [node name="Branch1" type="MeshInstance" parent="AppleTreePivot/Trunk"]
-transform = Transform( 0.173648, -0.984808, 0, 0.984808, 0.173648, 0, 0, 0, 1, -3.45072, 0, 0 )
+transform = Transform( 0.173648, -0.984808, 0, 0.984808, 0.173648, 0, 0, 0, 1, -0.368101, 0, 0 )
 mesh = SubResource( 2 )
 material/0 = null
+
+[node name="Apple" parent="AppleTreePivot/Trunk/Branch1" instance=ExtResource( 2 )]
+transform = Transform( 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 0, 1, -0.0586544, -0.010343, 0 )
+
+[node name="Apple2" parent="AppleTreePivot/Trunk/Branch1" instance=ExtResource( 2 )]
+transform = Transform( 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 0, 1, -0.0425353, 0.241232, 0 )
 
 [node name="Branch2" type="MeshInstance" parent="AppleTreePivot/Trunk"]
-transform = Transform( 0.173648, 0.984808, 0, -0.984808, 0.173648, 0, 0, 0, 1, 3.451, 0, 0 )
+transform = Transform( 0.173648, 0.984808, 0, -0.984808, 0.173648, 0, 0, 0, 1, 0.369417, 0, 0 )
 mesh = SubResource( 2 )
 material/0 = null
 
+[node name="Apple" parent="AppleTreePivot/Trunk/Branch2" instance=ExtResource( 2 )]
+transform = Transform( 1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0.050712, -0.00894195, 0 )
+
 [node name="Branch3" type="MeshInstance" parent="AppleTreePivot/Trunk"]
-transform = Transform( 0.173648, 0.984808, 0, -0.984808, 0.173648, 0, 0, 0, 1, 2.30148, 2.85318, 0 )
+transform = Transform( 0.173648, 0.984808, 0, -0.984808, 0.173648, 0, 0, 0, 1, 0.228867, 0.25597, 0 )
 mesh = SubResource( 3 )
 material/0 = null
 
 [node name="Branch4" type="MeshInstance" parent="AppleTreePivot/Trunk"]
-transform = Transform( 0.173648, -0.984808, 0, 0.984808, 0.173648, 0, 0, 0, 1, -2.0831, 2.73667, 0 )
+transform = Transform( 0.173648, -0.984808, 0, 0.984808, 0.173648, 0, 0, 0, 1, -0.241843, 0.27069, 0 )
 mesh = SubResource( 3 )
 material/0 = null
 
