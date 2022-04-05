@@ -1,6 +1,9 @@
 extends StaticBody
 
-func initialize(start_position, player_position):
-	translation = start_position
-	# We turn the mob so it looks at the player.
-	look_at(player_position, Vector3.UP)
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+func initialize(position):
+	translation = position
