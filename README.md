@@ -22,7 +22,7 @@ The hardware/OS used for the development are:
 
 Download Godot game engine for your operating sysmtem. There are standard version and Mono version(C# support). Choose the standard version since this project uses GDScript and does not need to support C#.
 
-- [Godot for Linux](https://godotengine.org/downlhttps://addons.mozilla.org/firefox/addon/webxr-api-emulatoroad/linux)
+- [Godot for Linux](https://godotengine.org/download/linux)
 - [Godot for Windows](https://godotengine.org/download/windows)
 - [Godot for macOS](https://godotengine.org/download/osx)
 
@@ -31,14 +31,16 @@ Clone this repository to your machine. Open Godot and select "Import
 
 ### OpenXR plugin
 
-The repository does not track Godot plugin files (addons folder). OpenXR plugin which is used to develop the VR scene should be downloaded locally on your machine. https://addons.mozilla.org/firefox/addon/webxr-api-emulator the toolbar, and then click "New Scene". In the new empty scene, switch to "AssetLib" tab by clicking the top-center menu. Search for "OpenXR Plugin" in the asset library and download it. It will ask you which files in the plugin to install. Leave it as default and click install. This may take for a few minutes. 
-https://www.snopekgames.com/tutorial/2020/how-make-vr-game-webxr-godot
+The repository does not track Godot plugin files (addons folder). OpenXR plugin which is used to develop the VR scene should be downloaded locally on your machine. Click Scene -> New Scene on the top-left of the Godot editor. In the new empty scene, switch to "AssetLib" tab by clicking the top-center menu. Search for "OpenXR Plugin" in the asset library and download it. It will ask you which files in the plugin to install. Leave it as default and click install. This may take for a few minutes. 
 
-### Project setting and Export Templatehttps://addons.mozilla.org/firefox/addon/webxr-api-emulator
+Once OpenXR plugin is installed successfully, a new folder `addons` will be created under the project folder. The .gitignore contains `addons/**` so the plugin will not be pushed to the repo.
+
+### Project setting and Export Template
 
 Next, in the Godot editor, click Project -> Export... and then click "Add" on the popup windown, select HTML5.
 
-If you are using Godot version eaelier than Godothttps://addons.mozilla.org/firefox/addon/webxr-api-emulator
+If you are using Godot version earlier than Godot 3.2.4-beta5, you need a custom templates to export the project compatible with WebXR. Download the following Debug and Release build and specify the path to them. If you are using a newer version of Godot, skip this step. 
+| Godot version | Downloads | 
 | --- | --- |
 | Godot 3.2.3 | [Debug build](https://www.dropbox.com/s/q769fj6f88avtwa/godot.javascript.opt.debug.zip?dl=1), [Release build](https://www.dropbox.com/s/p5c1gmyq58fnq27/godot.javascript.opt.zip?dl=1) |
 | Godot 3.2.4-beta4 | [Debug build](https://www.dropbox.com/s/4kou2nd5610paje/godot.javascript.opt.debug.zip?dl=1), [Release build](https://www.dropbox.com/s/y3emqzpadxzzkwt/godot.javascript.opt.zip?dl=1)|
@@ -47,7 +49,7 @@ _The required step for old version of Godot ends here_
 
 Finally, copy the script below into the "Head Include" field.
 ```
-<script src="https://cdn.jsdelivr.net/npm/webxr-polyfill@latest/build/webxr-polyfill.min.js"></script>https://addons.mozilla.org/firefox/addon/webxr-api-emulator
+<script src="https://cdn.jsdelivr.net/npm/webxr-polyfill@latest/build/webxr-polyfill.min.js"></script>
 <script>
 var polyfill = new WebXRPolyfill();
 </script>
@@ -61,7 +63,7 @@ Export the project to `build/webxr/index.html` in the project folder. You can ex
 
 To enter the VR scene, the runnable HTML file need to be served using HTTPS. To setup an HTTPS server on your machine, install browser-sync.
 
-If you have NodeJS and NPM, install browser-sync by running the following command in Terminal (Linux/macOS) or Cohttps://addons.mozilla.org/firefox/addon/webxr-api-emulatormmand prompt (Windows):
+If you have NodeJS and NPM, install browser-sync by running the following command in Terminal (Linux/macOS) or Command prompt (Windows):
 
 ```
 npm i -g browser-sync
@@ -75,7 +77,7 @@ browser-sync start -s --https --no-open --port=5001
 If the HTTPS server successfully start running, you will see the URLs (internal and external) to access the runnable project. 
 
 ### Locally using on the Desktop
-https://addons.mozilla.org/firefox/addon/webxr-api-emulator
+
 If you have a PCVR headset, you can acces to your browser to run the WebXR app. 
 Open your Chrome or Firefox browser and enter the URL shown in the terminal followed by `https://`. The local URL should be `https://localhost:5001`. **Ctrl+Shift+I** opens a Developer Tools of the browser and see messages on the console if you have print() statement in the project GDscript. 
 
