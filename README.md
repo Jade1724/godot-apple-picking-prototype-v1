@@ -44,6 +44,7 @@ If you are using Godot version earlier than Godot 3.2.4-beta5, you need a custom
 | --- | --- |
 | Godot 3.2.3 | [Debug build](https://www.dropbox.com/s/q769fj6f88avtwa/godot.javascript.opt.debug.zip?dl=1), [Release build](https://www.dropbox.com/s/p5c1gmyq58fnq27/godot.javascript.opt.zip?dl=1) |
 | Godot 3.2.4-beta4 | [Debug build](https://www.dropbox.com/s/4kou2nd5610paje/godot.javascript.opt.debug.zip?dl=1), [Release build](https://www.dropbox.com/s/y3emqzpadxzzkwt/godot.javascript.opt.zip?dl=1)|
+
 See [the tutorial](https://www.snopekgames.com/tutorial/2020/how-make-vr-game-webxr-godot) Export section for the full details. 
 _The required step for old version of Godot ends here_
 
